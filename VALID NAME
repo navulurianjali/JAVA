@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class user{
+    public static void main(String[] arg){
+        Scanner input= new Scanner(System.in);
+        System.out.print("enter name: ");
+        String i1=input.next();
+        System.out.print("reenter name: ");
+        String i2=input.next();
+        if(i1.equals(i2))
+        {
+            System.out.print("valid");
+        }
+        else{
+            System.out.print("not valid");
+        }
+    }
+}
