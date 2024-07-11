@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class MatrixAddition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the number of rows for Mat1:");
+        int rowsMat1 = scanner.nextInt();
+        System.out.println("Enter the number of columns for Mat1:");
+        int colsMat1 = scanner.nextInt();
+
+        int[][] mat1 = new int[rowsMat1][colsMat1];
+        System.out.println("Enter the elements of Mat1:");
+        for (int i = 0; i < rowsMat1; i++) {
+            for (int j = 0; j < colsMat1; j++) {
+                mat1[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter the number of rows for Mat2:");
+        int rowsMat2 = scanner.nextInt();
+        System.out.println("Enter the number of columns for Mat2:");
+        int colsMat2 = scanner.nextInt();
+
+        int[][] mat2 = new int[rowsMat2][colsMat2];
+        System.out.println("Enter the elements of Mat2:");
+        for (int i = 0; i < rowsMat2; i++) {
+            for (int j = 0; j < colsMat2; j++) {
+                mat2[i][j] = scanner.nextInt();
+            }
+        }
+
+        if (rowsMat1!= rowsMat2 || colsMat1!= colsMat2) {
+            System.out.println("Matrices must have the same dimensions");
+            return;
+        }
+
+        int[][] matSum = addMatrices(mat1, mat2);
+
+        System.out.println("Mat Sum = ");
+        for (int i = 0; i < rowsMat1; i++) {
+            for (int j = 0; j < colsMat1; j++) {
+                System.out.print(matSum[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[][] addMatrices(int[][] mat1, int[][] mat2) {
+        int rows = mat1.length;
+        int cols = mat1[0].length;
+        int[][] resMat = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resMat[i][j] = mat1[i][j] + mat2[i][j];
+            }
+        }
+
+        return resMat;
+    }
+}
