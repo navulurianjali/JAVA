@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class ConsonantVowelSeparator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Enter a word:");
+        String word = input.next();
+
+        String consonants = "";
+        String vowels = "";
+
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+                vowels += c;
+            } else if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+                consonants += c;
+            }
+        }
+
+        System.out.println("Consonants: " + consonants);
+        System.out.println("Vowels: " + vowels);
+}
+}
