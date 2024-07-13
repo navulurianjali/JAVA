@@ -1,0 +1,15 @@
+
+public class MethodOverloadingDemo {
+    public void printMessage(int a, double b) {
+        System.out.println("You said: " + a +" "+ b);
+    }
+
+    public void printMessage(String message1, String message2) {
+        System.out.println("You said: " + message1 + " " + message2);
+    }
+    public static void main(String[] args) {
+        MethodOverloadingDemo demo = new MethodOverloadingDemo();
+        demo.printMessage(100,12.3);
+        demo.printMessage("Hello", "World");
+    }
+}
