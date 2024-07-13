@@ -1,0 +1,17 @@
+
+public class MethodOverloadingDemo {
+     public void display(int num) {
+        System.out.println("You passed an integer: " + num);
+    }
+
+    public void display(String message) {
+        System.out.println("You passed a string: " + message);
+    }
+    public static void main(String[] args) {
+        MethodOverloadingDemo demo = new MethodOverloadingDemo();
+
+        demo.display(07);
+
+        demo.display("hyderabad");
+    }
+}
