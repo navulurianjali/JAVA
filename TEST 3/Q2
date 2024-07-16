@@ -1,0 +1,63 @@
+public abstract class Member {
+    protected String name;
+    protected int id;
+
+    public Member(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public abstract void getDetails();
+}
+
+public class Student extends Member {
+    private String program;
+    private int year;
+
+    public Student(String name, int id, String program, int year) {
+        super(name, id);
+        this.program = program;
+        this.year = year;
+    }
+
+    @Override
+    public void getDetails() {
+        System.out.println("Student Details:");
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Program: " + program);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class Teacher extends Member {
+    private String department;
+    private String subject;
+
+    public Teacher(String name, int id, String department, String subject) {
+        super(name, id);
+        this.department = department;
+        this.subject = subject;
+    }
+
+    @Override
+    public void getDetails() {
+        System.out.println("Teacher Details:");
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Department: " + department);
+        System.out.println("Subject: " + subject);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student("John Doe", 123, "Computer Science", 2);
+        student.getDetails();
+
+        System.out.println(); 
+
+        Teacher teacher = new Teacher("Jane Smith", 456, "Mathematics", "Algebra");
+        teacher.getDetails();
+    }
+}
