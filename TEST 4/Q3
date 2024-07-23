@@ -1,0 +1,38 @@
+abstract class employee{
+    abstract double calculatepay();
+}
+class manager extends employee{
+    int hr;
+    int dr;
+    double pf;
+    manager(int hr, int dr, double pf){
+        this.hr=hr;
+        this.dr=dr;
+        this.pf=pf;
+    }
+    double calculatepay(){
+        System.out.println("MAnager salary: " +hr*dr*((pf/100)+pf));
+        return 0;
+    }
+}
+class engineer extends employee{
+    int hr;
+    int dr;
+    double pf;
+    engineer(int hr, int dr, double pf){
+        this.hr=hr;
+        this.dr=dr;
+        this.pf=pf;
+    }
+    double calculatepay(){
+        System.out.println("Engineer salary: "+hr*dr*((pf/100)+pf));
+    return 0;}
+}
+public class Main{
+    public static void main(String[] args){
+        manager manager1=new manager(50,40,12);
+        engineer engineer1=new engineer(21,54,2);
+        manager1.calculatepay();
+        engineer1.calculatepay();
+    }
+}
