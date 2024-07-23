@@ -1,0 +1,30 @@
+abstract class animal{
+    abstract String speak();}
+    
+class cat extends animal{
+    String s;
+    cat(String s){
+        this.s=s;
+    }
+    String speak(){
+        return s;
+    }
+}
+class dog extends animal{
+    String s;
+    dog(String s){
+        this.s=s;
+    }
+    String speak(){
+        return s;
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        cat cat1=new cat("Cat meows.");
+        dog dog1=new dog("Dog barks.");
+        System.out.println("Cat meows");
+        System.out.println(cat1.speak());
+        System.out.println(dog1.speak());
+    }
+}
