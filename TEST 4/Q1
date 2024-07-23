@@ -1,0 +1,41 @@
+abstract class shape {
+    abstract double area();
+}
+
+class rectangle extends shape {
+    private double l;
+    private double w;
+
+    rectangle(double l, double w) {
+        this.l = l;
+        this.w = w;
+    }
+
+
+    double area() {
+        return l * w;
+    }
+}
+
+class circle extends shape {
+    private double r;
+
+    circle(double r) {
+        this.r = r;
+    }
+
+    
+    double area() {
+        return 3.14 *r*r;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        rectangle rectangle1 = new rectangle(5, 30);
+        circle circle1= new circle(37);
+
+        System.out.println("Area of Rectangle: " + rectangle1.area());
+        System.out.println("Area of Circle: " + circle1.area());
+    }
+}
