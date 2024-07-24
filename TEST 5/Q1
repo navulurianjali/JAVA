@@ -1,0 +1,65 @@
+import java.util.*;
+
+class StuAtten {
+    private Map<Integer, Map<String, Boolean>> attenRec;
+    private Map<Integer, String> stuNames;
+
+    public StuAtten() {
+        this.attenRec = new HashMap<>();
+        this.stuNames = new HashMap<>();
+    }
+
+    public void addStudent(int studentId, String name) {
+        stuNames.put(studentId, name);
+        attenRec.put(studentId, new HashMap<>());
+    }
+
+    public void markAttendance(int studentId, String date, boolean isPresent) {
+        if (attenRec.containsKey(studentId)) {
+            attenRec.get(studentId).put(date, isPresent);
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
+   
+    public void generateAttendanceReport(int studentId) {
+        if (attenRec.containsKey(studentId)) {
+            System.out.println("Attendance Report for " + stuNames.get(studentId) + ":");
+            for (Map.Entry<String, Boolean> entry : attenRec.get(studentId).entrySet()) {
+                System.out.println(entry.getKey() + ": " + (entry.getValue() ? "Present" : "Absent"));
+            }
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
+  
+    public void calculateAttendancePercentage(int studentId) {
+        if (attenRec.containsKey(studentId)) {
+            int totalDays = attenRec.get(studentId).size();
+            int presentDays = 0;
+            for (Boolean isPresent : attenRec.get(studentId).values()) {
+                if (isPresent) {
+                    presentDays++;
+                }
+            }
+            double attendancePercentage = ((double) presentDays / totalDays) * 100;
+            System.out.println("Attendance Percentage for " + stuNames.get(studentId) + ": " + attendancePercentage + "%");
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
+    public static void main(String[] args) {
+        StuAtten attendanceSystem = new StuAtten();
+        attendanceSystem.addStudent(1, "vishnu");
+       
+        attendanceSystem.markAttendance(1, "2023-03-01", true);
+        attendanceSystem.markAttendance(1, "2023-03-02", false);
+       
+        attendanceSystem.generateAttendanceReport(1);
+        attendanceSystem.calculateAttendancePercentage(1);
+
+    }
+}
