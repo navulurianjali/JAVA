@@ -1,0 +1,65 @@
+import java.util.*;
+
+class weather {
+    private Map<Integer, Map<String;
+    private Map<Integer, String> location;
+
+    public current() {
+        this.weather = new HashMap<>();
+        this.weather = new HashMap<>();
+    }
+
+    public void weekly(int number, String name) {
+        current.put(number, name);
+        
+    }
+
+    public void currentweather(int num, String location) {
+        if (.containsKey(num)) {
+            weekly.get(studentId).put(date, isPresent);
+        } else {
+            System.out.println("location not found.");
+        }
+    }
+
+   
+    public void generateAttendanceReport(int studentId) {
+        if (attenRec.containsKey(studentId)) {
+            System.out.println("weather Report for " + location.get(number) + ":");
+            for (Map.Entry<String, Boolean> entry : attenRec.get(num).entrySet()) {
+                System.out.println(entry.getKey() + ": " + (entry.getValue() ? "good" : "bad"));
+            }
+        } else {
+            System.out.println("location not found.");
+        }
+    }
+
+  
+    public void displayweather(int number) {
+        if (attenRec.containsKey(studentId)) {
+            int totalDays = attenRec.get(studentId).size();
+            int presentDays = 0;
+            for (Boolean isPresent : attenRec.get(studentId).values()) {
+                if (isPresent) {
+                    presentDays++;
+                }
+            }
+            double attendancePercentage = ((double) presentDays / totalDays) * 100;
+            System.out.println("Attendance Percentage for " + stuNames.get(studentId) + ": " + attendancePercentage + "%");
+        } else {
+            System.out.println("Student not found.");
+        }
+    }
+
+    public static void main(String[] args) {
+        StuAtten attendanceSystem = new StuAtten();
+        attendanceSystem.addStudent(1, "ooty");
+       
+        attendanceSystem.markAttendance(1, "2023-03-01",good);
+        attendanceSystem.markAttendance(1, "2023-03-02",good);
+       
+        attendanceSystem.generateAttendanceReport(1);
+        attendanceSystem.calculateAttendancePercentage(1);
+
+    }
+}
