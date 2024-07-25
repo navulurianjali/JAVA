@@ -1,0 +1,19 @@
+class Parent {
+    void display(int a) {
+        System.out.println("Parent's display method with parameter: " + a);
+    }
+}
+
+class Child extends Parent {
+    void display(int a, int b) {
+        System.out.println("Child's display method with parameters: " + a + ", " + b);
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        obj.display(10);      
+        obj.display(10, 20);   
+    }
+}
