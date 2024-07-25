@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class SubstringCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the main string: ");
+        String mainString = scanner.nextLine();
+        System.out.print("Enter the substring to check: ");
+        String subString = scanner.nextLine();
+
+        boolean found = false;
+        for (int i = 0; i <= mainString.length() - subString.length(); i++) {
+            if (mainString.regionMatches(i, subString, 0, subString.length())) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Substring \"" + subString + "\" found in the main string.");
+        } else {
+            System.out.println("Substring \"" + subString + "\" not found in the main string.");
+        }
+
+        scanner.close();
+    }
+}
