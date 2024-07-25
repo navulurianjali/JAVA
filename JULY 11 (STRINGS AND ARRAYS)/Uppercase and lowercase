@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class ConvertCase {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        String upperCaseString = input.toUpperCase();
+        String lowerCaseString = input.toLowerCase();
+
+        System.out.println("Uppercase string: " + upperCaseString);
+        System.out.println("Lowercase string: " + lowerCaseString);
+
+        scanner.close();
+    }
+}
