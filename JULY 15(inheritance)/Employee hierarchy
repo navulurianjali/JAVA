@@ -1,0 +1,124 @@
+class Employee {
+    String name;
+    String address;
+    double salary;
+    String jobTitle;
+
+    Employee(String name, String address, double salary, String jobTitle) {
+        this.name = name;
+        this.address = address;
+        this.salary = salary;
+        this.jobTitle = jobTitle;
+    }
+
+    double calculateBonus() {
+        return 0.0;
+    }
+
+    String generatePerformanceReport() {
+        return "Performance report";
+    }
+
+    void manageProjects() {
+        
+    }
+}
+
+class Manager extends Employee {
+    Manager(String name, String address, double salary, String jobTitle) {
+        super(name, address, salary, jobTitle);
+    }
+
+    @Override
+    double calculateBonus() {
+        return salary * 0.2;
+    }
+
+    @Override
+    String generatePerformanceReport() {
+        return "Manager performance report";
+    }
+
+    @Override
+    void manageProjects() {
+        
+    }
+}
+
+class Developer extends Employee {
+    Developer(String name, String address, double salary, String jobTitle) {
+        super(name, address, salary, jobTitle);
+    }
+
+    @Override
+    double calculateBonus() {
+        return salary * 0.15;
+    }
+
+    @Override
+    String generatePerformanceReport() {
+        return "Developer performance report";
+    }
+
+    @Override
+    void manageProjects() {
+        
+    }
+}
+
+class Programmer extends Employee {
+    Programmer(String name, String address, double salary, String jobTitle) {
+        super(name, address, salary, jobTitle);
+    }
+
+    @Override
+    double calculateBonus() {
+        return salary * 0.1;
+    }
+
+    @Override
+    String generatePerformanceReport() {
+        return "Programmer performance report";
+    }
+
+    @Override
+    void manageProjects() {
+        
+    }
+}
+
+public class CompanyEmployeeHierarchy {
+    public static void main(String[] args) {
+        Employee employee = new Employee("John Doe", "123 Main St", 50000.0, "Employee");
+        System.out.println("Employee Name: " + employee.name);
+        System.out.println("Employee Address: " + employee.address);
+        System.out.println("Employee Salary: $" + employee.salary);
+        System.out.println("Employee Job Title: " + employee.jobTitle);
+        System.out.println("Bonus: $" + employee.calculateBonus());
+        System.out.println("Performance Report: " + employee.generatePerformanceReport());
+
+        Manager manager = new Manager("Jane Smith", "456 Oak Ave", 80000.0, "Manager");
+        System.out.println("\nManager Name: " + manager.name);
+        System.out.println("Manager Address: " + manager.address);
+        System.out.println("Manager Salary: $" + manager.salary);
+        System.out.println("Manager Job Title: " + manager.jobTitle);
+        System.out.println("Bonus: $" + manager.calculateBonus());
+        System.out.println("Performance Report: " + manager.generatePerformanceReport());
+
+        Developer developer = new Developer("Alice Johnson", "789 Elm Rd", 60000.0, "Developer");
+        System.out.println("\nDeveloper Name: " + developer.name);
+        System.out.println("Developer Address: " + developer.address);
+        System.out.println("Developer Salary: $" + developer.salary);
+        System.out.println("Developer Job Title: " + developer.jobTitle);
+        System.out.println("Bonus: $" + developer.calculateBonus());
+        System.out.println("Performance Report: " + developer.generatePerformanceReport());
+
+        Programmer programmer = new Programmer("Bob Williams", "101 Pine Blvd", 70000.0, "Programmer");
+        System.out.println("\nProgrammer Name: " + programmer.name);
+        System.out.println("Programmer Address: " + programmer.address);
+        System.out.println("Programmer Salary: $" + programmer.salary);
+        System.out.println("Programmer Job Title: " + programmer.jobTitle);
+        System.out.println("Bonus: $" + programmer.calculateBonus());
+        System.out.println("Performance Report: " + programmer.generatePerformanceReport());
+    }
+}
