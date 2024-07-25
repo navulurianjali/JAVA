@@ -1,0 +1,19 @@
+public class MethodOverloading {
+    static void display(int a) {
+        System.out.println("Integer: " + a);
+    }
+
+    static void display(double a) {
+        System.out.println("Double: " + a);
+    }
+
+    static void display(String s) {
+        System.out.println("String: " + s);
+    }
+
+    public static void main(String[] args) {
+        display(10);
+        display(10.5);
+        display("Hello");
+    }
+}
