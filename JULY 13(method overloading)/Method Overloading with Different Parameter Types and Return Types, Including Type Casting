@@ -1,0 +1,17 @@
+public class MethodOverloading {
+    static int add(int a, int b) {
+        return a + b;
+    }
+
+    static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int sumInt = add(10, 20);
+        double sumDouble = add(10.5, 20.5);
+
+        System.out.println("Sum (int): " + sumInt);
+        System.out.println("Sum (double): " + sumDouble);
+    }
+}
