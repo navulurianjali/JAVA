@@ -1,0 +1,32 @@
+class Person {
+    String getFirstName() {
+        return "John";
+    }
+
+    String getLastName() {
+        return "Doe";
+    }
+}
+
+class Employee extends Person {
+    String getLastName() {
+        return "Doe, Employee";
+    }
+
+    String getEmployeeId() {
+        return "EMP001";
+    }
+}
+
+public class PersonTest {
+    public static void main(String[] args) {
+        Person person = new Person();
+        System.out.println("First Name: " + person.getFirstName());
+        System.out.println("Last Name: " + person.getLastName()); 
+        
+        Employee employee = new Employee();
+        System.out.println("First Name: " + employee.getFirstName());
+        System.out.println("Last Name: " + employee.getLastName()); 
+        System.out.println("Employee ID: " + employee.getEmployeeId()); 
+    }
+}
