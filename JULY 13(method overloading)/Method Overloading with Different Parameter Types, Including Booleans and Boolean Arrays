@@ -1,0 +1,18 @@
+public class MethodOverloading {
+    static void display(boolean b) {
+        System.out.println("Boolean: " + b);
+    }
+
+    static void display(boolean[] arr) {
+        System.out.print("Boolean array: ");
+        for (boolean b : arr) {
+            System.out.print(b + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        display(true);
+        display(new boolean[]{true, false, true});
+    }
+}
