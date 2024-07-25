@@ -1,0 +1,35 @@
+class Shape {
+    double getPerimeter() {
+        return 0.0;
+    }
+
+    double getArea() {
+        return 0.0;
+    }
+}
+
+class Circle extends Shape {
+    double getPerimeter() {
+        // Assuming radius is defined somewhere
+        double radius = 5.0;
+        return 2 * Math.PI * radius;
+    }
+
+    double getArea() {
+        // Assuming radius is defined somewhere
+        double radius = 5.0;
+        return Math.PI * radius * radius;
+    }
+}
+
+public class ShapeTest {
+    public static void main(String[] args) {
+        Shape shape = new Shape();
+        System.out.println("Perimeter of shape: " + shape.getPerimeter()); 
+        System.out.println("Area of shape: " + shape.getArea()); 
+        
+        Circle circle = new Circle();
+        System.out.println("Perimeter of circle: " + circle.getPerimeter()); 
+        System.out.println("Area of circle: " + circle.getArea()); 
+    }
+}
