@@ -1,0 +1,19 @@
+
+class Parent {
+    public void display() {
+        System.out.println("Parent's display method");
+    }
+}
+
+class Child extends Parent {
+    private void display() {
+        System.out.println("Child's display method");
+    }
+}
+
+public class MethodOverriding {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        // obj.display(); // This will cause a compilation error because display() in Child is private
+    }
+}
