@@ -1,0 +1,90 @@
+class Vehicle {
+    String make;
+    String model;
+    int year;
+    String fuelType;
+
+    Vehicle(String make, String model, int year, String fuelType) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.fuelType = fuelType;
+    }
+
+    double calculateFuelEfficiency() {
+        return 0.0;
+    }
+
+    double calculateDistanceTraveled() {
+        return 0.0;
+    }
+
+    int getMaxSpeed() {
+        return 0;
+    }
+}
+
+class Truck extends Vehicle {
+    Truck(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    double calculateFuelEfficiency() {
+        return 15.0;
+    }
+}
+
+class Car extends Vehicle {
+    Car(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    double calculateFuelEfficiency() {
+        return 20.0;
+    }
+}
+
+class Motorcycle extends Vehicle {
+    Motorcycle(String make, String model, int year, String fuelType) {
+        super(make, model, year, fuelType);
+    }
+
+    @Override
+    double calculateFuelEfficiency() {
+        return 25.0;
+    }
+}
+
+public class VehicleHierarchy {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle("Generic", "Model", 2023, "Gasoline");
+        System.out.println("Vehicle Make: " + vehicle.make);
+        System.out.println("Vehicle Model: " + vehicle.model);
+        System.out.println("Vehicle Year: " + vehicle.year);
+        System.out.println("Vehicle Fuel Type: " + vehicle.fuelType);
+        System.out.println("Fuel Efficiency: " + vehicle.calculateFuelEfficiency());
+
+        Truck truck = new Truck("Ford", "F-150", 2023, "Diesel");
+        System.out.println("\nTruck Make: " + truck.make);
+        System.out.println("Truck Model: " + truck.model);
+        System.out.println("Truck Year: " + truck.year);
+        System.out.println("Truck Fuel Type: " + truck.fuelType);
+        System.out.println("Fuel Efficiency: " + truck.calculateFuelEfficiency());
+
+        Car car = new Car("Toyota", "Corolla", 2023, "Gasoline");
+        System.out.println("\nCar Make: " + car.make);
+        System.out.println("Car Model: " + car.model);
+        System.out.println("Car Year: " + car.year);
+        System.out.println("Car Fuel Type: " + car.fuelType);
+        System.out.println("Fuel Efficiency: " + car.calculateFuelEfficiency());
+
+        Motorcycle motorcycle = new Motorcycle("Harley-Davidson", "Sportster", 2023, "Gasoline");
+        System.out.println("\nMotorcycle Make: " + motorcycle.make);
+        System.out.println("Motorcycle Model: " + motorcycle.model);
+        System.out.println("Motorcycle Year: " + motorcycle.year);
+        System.out.println("Motorcycle Fuel Type: " + motorcycle.fuelType);
+        System.out.println("Fuel Efficiency: " + motorcycle.calculateFuelEfficiency());
+    }
+}
