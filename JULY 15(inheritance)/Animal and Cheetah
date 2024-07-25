@@ -1,0 +1,21 @@
+class Animal {
+    void move() {
+        System.out.println("Animal moves");
+    }
+}
+
+class Cheetah extends Animal {
+    void move() {
+        System.out.println("Cheetah runs");
+    }
+}
+
+public class AnimalTest {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.move(); // Outputs: Animal moves
+        
+        Cheetah cheetah = new Cheetah();
+        cheetah.move(); // Outputs: Cheetah runs
+    }
+}
