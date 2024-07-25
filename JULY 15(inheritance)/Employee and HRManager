@@ -1,0 +1,30 @@
+class Employee {
+    void work() {
+        System.out.println("Employee is working");
+    }
+
+    double getSalary() {
+        return 0.0;
+    }
+}
+
+class HRManager extends Employee {
+    void work() {
+        System.out.println("HR Manager is working");
+    }
+
+    void addEmployee() {
+        System.out.println("HR Manager adds an employee");
+    }
+}
+
+public class EmployeeTest {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        emp.work(); // Outputs: Employee is working
+        
+        HRManager hrManager = new HRManager();
+        hrManager.work(); // Outputs: HR Manager is working
+        hrManager.addEmployee(); // Outputs: HR Manager adds an employee
+    }
+}
