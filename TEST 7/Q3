@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Vehicle {
+    public void move() {
+        System.out.println("The vehicle is moving");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        Vehicle vehicle = new Vehicle();
+        Car car = new Car();
+        Bicycle bicycle = new Bicycle();
+
+        System.out.println("Choose a vehicle to move: 1. Vehicle 2. Car 3. Bicycle");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                vehicle.move();
+                break;
+            case 2:
+                car.move();
+                break;
+            case 3:
+                bicycle.move();
+                break;
+            default:
+                System.out.println("Invalid choice");
+        }
+
+        scanner.close();
+    }
+}
+
+class Car extends Vehicle {
+   
+    public void move() {
+        System.out.println("The car is driving");
+    }
+}
+
+class Bicycle extends Vehicle {
+   
+    public void move() {
+        System.out.println("The bicycle is pedaling");
+}
+}
