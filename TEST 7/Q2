@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+ class Person {
+    protected String name;
+    protected int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter Person Name: ");
+        String personName = scanner.nextLine();
+        System.out.print("Enter Person Age: ");
+        int personAge = scanner.nextInt();
+        scanner.nextLine(); 
+
+        Person person = new Person(personName, personAge);
+
+        System.out.print("Enter Student Name: ");
+        String studentName = scanner.nextLine();
+        System.out.print("Enter Student Age: ");
+        int studentAge = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.print("Enter Student ID: ");
+        String studentId = scanner.nextLine();
+
+        Student student = new Student(studentName, studentAge, studentId);
+
+        person.displayInfo();
+        student.displayInfo();
+
+        scanner.close();
+    }
+}
+class Student extends Person {
+    private String studentId;
+
+    public Student(String name, int age, String studentId) {
+        super(name, age);
+        this.studentId = studentId;
+    }
+
+    public void displayInfo() {
+        super.displayInfo();
+        System.out.println("Student ID: " + studentId);
+}}
