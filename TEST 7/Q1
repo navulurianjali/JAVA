@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Employee {
+    protected String name;
+    protected double salary;
+    protected String dept;
+
+    public Employee(String name, double salary, String dept) {
+        this.name = name;
+        this.salary = salary;
+        this.dept = dept;
+    }
+ public String toString() {
+        return "Employee Name: " + name + ", Salary: " + salary + ", Department: " + dept;
+    }
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+System.out.print("Enter Employee Name: ");
+        String empName = scanner.nextLine();
+        System.out.print("Enter Employee Salary: ");
+        double empSalary = scanner.nextDouble();
+        scanner.nextLine(); 
+        System.out.print("Enter Employee Department: ");
+        String empDept = scanner.nextLine();
+        Employee emp = new Employee(empName, empSalary, empDept);
+System.out.print("Enter Manager Name: ");
+        String mgrName = scanner.nextLine();
+        System.out.print("Enter Manager Salary: ");
+        double mgrSalary = scanner.nextDouble();
+        scanner.nextLine();  
+        System.out.print("Enter Manager Department: ");
+        String mgrDept = scanner.nextLine();
+Manager mgr = new Manager(mgrName, mgrSalary, mgrDept);
+System.out.println(emp);
+System.out.println(mgr);
+
+        scanner.close();
+    }
+}
+
+class Manager extends Employee {
+
+    public Manager(String name, double salary, String dept) {
+        super(name, salary, dept);
+    }
+
+    public String toString() {
+    return super.toString() + " (Manager)";
+}
+}
