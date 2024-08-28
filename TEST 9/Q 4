@@ -1,0 +1,33 @@
+public class StringCompressor {
+    public static String compressString(String str) {
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+        StringBuilder compressed = new StringBuilder();
+        char currentChar = str.charAt(0);
+        int count = 1;
+
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == currentChar) {
+                count++;
+            } else {
+                compressed.append(currentChar);
+                if (count > 1) {
+                    compressed.append(count);
+                }
+                currentChar = str.charAt(i);
+                count = 1;
+            }
+        }
+        compressed.append(currentChar);
+        if (count > 1) {
+            compressed.append(count);
+        }
+
+        return compressed.toString().equals(str) ? str : compressed.toString();
+    }
+    public static void main(String[] args) {
+        System.out.println(compressString("aabcccccaaa")); 
+        System.out.println(compressString("abcd")); 
+    }
+}
