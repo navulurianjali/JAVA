@@ -1,0 +1,15 @@
+public class PatternMatcher {
+    public static boolean matchesPattern(String str, String pattern) {
+        return str.matches(pattern);
+    }
+
+    public static boolean isValidPhoneNumber(String phoneNumber) {
+        String pattern = "^\\d{3}-\\d{3}-\\d{4}$"; 
+        return matchesPattern(phoneNumber, pattern);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isValidPhoneNumber("123-456-7890")); 
+        System.out.println(isValidPhoneNumber("1234567890")); 
+    }
+}
